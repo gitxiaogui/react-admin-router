@@ -15,7 +15,17 @@ class MenuNav extends Component {
     collapsed: false,
     openKeys: [],
     selectedKeys: [],
-    menuList: [
+    menuList: []
+  }
+
+  componentWillReceiveProps(location) {
+    // console.log(location.location)
+    this.setState({
+      selectedKeys: [location.location.pathname],
+    })
+  }
+  componentWillMount(){
+    let menuList = [
       {
         path: '/home',
         name: '首页',
@@ -49,24 +59,23 @@ class MenuNav extends Component {
         ]
       },
       {
-        path: '/activity',
-        name: '活动界面'
+        path: '/dataQuery',
+        name: '数据查询',
+        children: [
+          {
+            path: '/dataQuery/allData',
+            name: '所有数据',
+          }
+        ]
       }
     ]
-  }
-  routerWillLeave = (nextLocation) => {
-    console.log(nextLocation)
-  }
-  componentWillReceiveProps(location) {
-    // console.log(location.location)
-    this.setState({
-      selectedKeys: [location.location.pathname],
-    })
-  }
-  componentWillMount(){
+    setTimeout(()=>{
+      this.setState({
+        menuList: menuList
+      })
+    },0)
     let nameKey = this.props.location.pathname ==='/' ? '/home' : this.props.location.pathname
     let list = nameKey.split('/');
-    //console.log(list,list.slice(0, 3).join('/'))
     switch (list.length){
       case 2:
         this.setState({
@@ -110,7 +119,6 @@ class MenuNav extends Component {
 
 
   render() {
-    // console.log('menu')
     const {menuList} = this.state;
     return (
         <div style={{width: '200px', height: '100%', display: 'flex', flexDirection: 'column'}}>
@@ -148,38 +156,6 @@ class MenuNav extends Component {
                       <Menu.Item key={item.path}><Link to={item.path}><span>{item.name}</span></Link></Menu.Item>
               ))
             }
-            {/* <Menu.Item key="/home">
-              <Link to='/home'>
-                <span>首页</span>
-              </Link>
-            </Menu.Item>
-
-
-
-            <SubMenu
-                key="/user"
-                title={
-                  <span>
-                <span>用户管理</span>
-              </span>
-                }
-            >
-              <Menu.Item key="/user/userManage">
-                <Link to='/user/userManage'>
-                  <span>用户信息管理</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="/user/userCost">
-                <Link to='/user/userCost'>
-                  <span>消费查询</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="/user/paynum">
-                <Link to='/user/paynum'>
-                  <span>充值查询</span>
-                </Link>
-              </Menu.Item>
-            </SubMenu>*/}
           </Menu>
         </div>
     )

@@ -3,9 +3,7 @@ import React,{Component} from 'react';
 class Dashboard extends Component{
   render(){
     return(
-        <div>
-          首页
-        </div>
+        <div>欢迎登录推广后台</div>
     )
   }
 }

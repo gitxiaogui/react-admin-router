@@ -1,0 +1,11 @@
+.allData{
+  .ant-col {
+    display: flex;
+    align-items: center;
+    span{
+      display: inline-block;
+      padding: 0 6px;
+      white-space: nowrap;
+    }
+  }
+}

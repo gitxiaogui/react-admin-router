@@ -1,6 +1,10 @@
 import React from 'react';
 import Dashboard from '../pages/dashboard'
 import Login from '../pages/login'
+
+import AllData from '../pages/dataQuery/allData'
+
+
 const Home1 = React.lazy(() => import('../pages/home/home1'))
 const Home2 = React.lazy(() => import('../pages/home/home2'))
 const Home3 = React.lazy(() => import('../pages/home/home3'))
@@ -43,6 +47,10 @@ let router = [
   {
     path:'/activity',
     component: Activity
+  },
+  {
+    path:'/dataQuery/allData',
+    component: AllData
   }
 ]
 export default router

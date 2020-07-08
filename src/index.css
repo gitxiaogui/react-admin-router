@@ -1,53 +1,19 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
-.mainDiv{
-  display: flex;
-  width: 100%;
-}
-.leftNav{
-  width: 16%;
-  background-color: #c0c0c0;
-  color:#333;
-  font-size:24px;
-  height: 100%;
-  padding: 20px;
-}
-.rightMain{
-  width: 84%;
-  height:100%;
-  background-color: #fff;
-  font-size:20px;
 
-}
-.topNav{
-  height:50px ;
-  background-color: #cfdefd;
-}
-.topNav ul{
-  display: flex;
-  margin: 0px;
-  padding: 0px;
-}
-.topNav li{
-  padding: 10px;
-  text-align: center;
-  list-style: none;
-}
-.videoContent{
-  padding:20px;
-}
+
 #root{
   height:100%;
 }
@@ -83,17 +49,7 @@ code {
 
 }
 
-.ant-form-item{
-  height:60px;
-  width:300px;
-  display: flex;
-  justify-content: space-between;
-}
-.ant-form-item-children{
-  width:100%;
-  display: flex;
-  justify-content: space-between;
-}
+
 .loading{
   background: transparent;
   width:100%;
@@ -101,5 +57,22 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ant-layout{
+  width:100%;
+  overflow: hidden;
+}
+.ant-layout-content{
+  overflow: auto!important;
+}
+.searchForm{
+  display: flex!important;
+  flex-wrap: wrap!important;
+}
+.searchForm .ant-form-item{
+  display: flex!important;
+  align-items: center!important;
+}
+.searchForm .ant-form-item .ant-form-item-label{
 
 }
